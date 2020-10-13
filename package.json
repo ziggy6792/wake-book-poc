@@ -1,15 +1,23 @@
 {
-  "name": "understanding-typescript",
+  "name": "understanding-ts",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "lite-server"
+    "start": "nodemon dist/app.js"
   },
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "jssoup": "0.0.12"
+  },
   "devDependencies": {
-    "lite-server": "^2.5.4"
+    "@types/express": "^4.17.2",
+    "@types/node": "^12.12.9",
+    "nodemon": "^1.19.4"
   }
 }
