@@ -1,7 +1,6 @@
 import Axios from 'axios';
 import url from 'url';
 import moment from 'moment';
-
 const JSSoup = require('jssoup').default;
 
 interface ICalendar {
