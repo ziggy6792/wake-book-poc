@@ -39,14 +39,12 @@ const fetch = async (calendarName: keyof ICalendars, dayInc: number | null = nul
   let axios = Axios.create({
     baseURL: getBaseUrl(calendarName),
   });
-  // const jumpDate = '2020-10-21';
   const params: ICalendar = calendar;
 
   if (dayInc) {
     const jumpDate = moment().add(dayInc, 'days').format('YYYY-MM-DD');
 
-    console.log('jumpDate');
-    console.log(jumpDate);
+    console.log('jumpDate', jumpDate);
     params.jumpDate = jumpDate;
   }
 
@@ -81,7 +79,7 @@ const main = async (calendarName: keyof ICalendars) => {
     dayElements = dayElements.concat(dayElems);
   });
 
-  console.log('No of days found', dayElements.length);
+  console.log('No of days checked', dayElements.length);
 
   dayElements.forEach((day, i) => {
     // const freeSlots = day.findAll('div', 'gridFree') as any[];
@@ -100,8 +98,6 @@ const main = async (calendarName: keyof ICalendars) => {
       availableSlots.push({ startTime, bookingLink });
       //
     });
-
-    // console.log(i, freeSlots.length);
   });
 
   return availableSlots;
